@@ -1,1 +1,1 @@
-# SYT
+# Synchronisation bei mobilen Diensten
