@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Einkaufsliste</title>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+<script language="javascript" type="text/javascript">
+	
+	// Initialize Firebase ... Anbindung 
+	var config = {
+    apiKey: "AIzaSyBGEY0KjdViMZPUwvM6HJ9CAGmJT4jDvPE",
+    authDomain: "todolist-80418.firebaseapp.com",
+    databaseURL: "https://todolist-80418.firebaseio.com",
+    projectId: "todolist-80418",
+    storageBucket: "todolist-80418.appspot.com",
+    messagingSenderId: "57315669570"
+  };
+  firebase.initializeApp(config);
+  var firebaseRef = firebase.database().ref();
+  var roots = firebase.database().ref().child("Liste");
+	
+	
+	
+	
+	function deleteButtonClicked(e) {
+		var newitem = document.getElementById("newitem");
+		e.stopPropagation();
+		const userID = e.target.getAttribute("newitem");
+		const userRef = firebaseRef.child('Liste/' + userID);
+		userRef.remove()
+	}
+	
+	
+	
+	
+	<!-- übernimmt die value und synchronisiert es in die datenbank ... child = Liste -->
+	function subClick() {
+
+		var newitem = document.getElementById("newitem");
+		firebaseRef.child("Liste").push(newitem.value);
+		console.log("Value added: " + newitem.value);
+		<!-- Loggt hinzugefuegte produkte --> 
+		
+	}
+	
+	<!-- Loggt geloescht produkte --> 
+		roots.on("child_removed", function(snapshot)  {
+		var newPost = snapshot.val();
+		console.log("Value removed: " + newPost);
+		});
+	
+	
+	
+	<!-- gibt die Datenstruktur in der Konsole aus --> 
+	firebaseRef.on("value", function(snapshot) {
+    for (x in snapshot.val()) {
+        var xRef = firebase.database().ref();
+        xRef.once("value", function(xsnapshot) {
+            var data = xsnapshot.val();
+            console.log(data);
+        });
+    }
+});
+		
+		
+
+
+</script> 
+</head>
+<body>
+  
+  <header><h1>Einkaufsliste</h1></header>
+  
+  
+	<section>
+    <ul id="todolist"></ul>
+    <form action="#" method="post">
+      <div>
+        <input type="text" name="newitem" id="newitem" 
+               placeholder="new item" />
+        <input type="submit" id ="submit" onclick = "subClick()" value="Add" />
+      </div>
+    </form>
+  </section>
+
+<script>
+<!-- Beim Klicken des Buttons soll die Value formatiert ausgegeben werden -->
+var todo = document.querySelector( '#todolist' ),
+    form = document.querySelector( 'form' ),
+    field = document.querySelector( '#newitem' );
+    
+form.addEventListener( 'submit', function( ev ) {
+  var text = field.value;
+  if ( text !== '' ) {
+	todo.innerHTML += '<li>' + text + '</li>';
+	
+  }
+  ev.preventDefault();
+  
+}, false);
+
+todo.addEventListener( 'click', function( ev ){
+  var t = ev.target;
+  
+  if ( t.tagName === 'LI' ) {
+		
+		t.parentNode.removeChild( t );
+		
+  };
+  ev.preventDefault();
+}, false);
+
+</script>
+
+</body>
+</html>
