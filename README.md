@@ -182,6 +182,34 @@ Hierbei hat man eine kleine "Vorschau" wie die Seite letzendlich aussehen wird.
 **Website bereitstellen**
 `firebase deploy`
 
-Nun wird ein Link angezeigt - dieser ist die gehostete Website 
+Nun wird ein Link angezeigt - dieser ist die gehostete Website
 
-Meine Website: 
+---
+
+
+Meine Website: [Einkaufsliste](https://todolist-80418.firebaseapp.com/)
+
+
+---
+
+
+Meine Datenbank: [Einkaufsliste Firestore DB](https://console.firebase.google.com/project/todolist-80418/database/todolist-80418/data)
+
+
+---
+
+
+Autor: Nemanja Filipovic
+
+Datum:17.04.2018 
+
+
+---
+
+
+Quellen:
+
+
+Allgemeine Informationen und Tutorials: [Firebase Documentation](https://firebase.google.com/docs/)
+
+Bei Problemen:[Stackoverflow](https://stackoverflow.com/) :-) 
