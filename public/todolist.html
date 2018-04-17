@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Einkaufsliste</title>
+ <link rel ="stylesheet" type="text/css" href="style.css">
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
 <script language="javascript" type="text/javascript">
 	
 	// Initialize Firebase ... Anbindung 
@@ -19,43 +19,40 @@
   firebase.initializeApp(config);
   
   var firebaseRef = firebase.database().ref();
-  var roots = firebase.database().ref().child("Liste");
-	
-	
-	
-	<!-- übergibt die value und synchronisiert es in die datenbank ... child = Liste -->
+  
 	function subClick() {
-
+		// Get Element 
 		var newitem = document.getElementById("newitem");
-		firebaseRef.child("Liste").push(newitem.value);
-		<!-- Loggt hinzugefuegte produkte --> 
-		console.log("Value added: " + newitem.value);
-		
-		
+		var obj = document.getElementById("Liste");
+		// Referenziert auf Child Liste 
+		var insert = firebaseRef.child("Liste");
+		// Fügt hinzu 
+		insert.push(newitem.value);	
 	}
 	
-	<!-- Loggt geloescht produkte --> 
-		roots.on("child_removed", function(snapshot)  {
-		var newPost = snapshot.val();
-		console.log("Value removed: " + newPost);
-		});
+	var roots = firebaseRef.child("Liste");
+	
+	// Loggt alle hinzugefuegte produkte 
+	roots.on('child_added', snap => console.log(snap.val()));
 	
 	
 	
-	<!-- gibt die Datenbank in der Konsole aus --> 
-	firebaseRef.on("value", function(snapshot) {
-    for (x in snapshot.val()) {
-        var xRef = firebase.database().ref();
-        xRef.once("value", function(xsnapshot) {
-            var data = xsnapshot.val();
-            console.log(data);
-        });
-    }
-});
-		
-		
-
-
+	
+	
+	// Loggt geloescht produkte 
+	roots.on("child_removed", snap => console.log("geloescht:"+snap.val()));
+	
+	// console.log("Value added: " + newitem.value);				
+	<!-- gibt ein POJO in der Konsole aus 
+	//firebaseRef.on("value", function(snapshot) {
+    //for (x in snapshot.val()) {
+    //    var xRef = firebase.database().ref();
+    //    xRef.once("value", function(xsnapshot) {
+    //        var data = xsnapshot.val();
+    //        console.log(data);
+    //    });
+    //}
+//});
 </script> 
 </head>
 <body>
@@ -82,26 +79,27 @@ var todo = document.querySelector( '#todolist' ),
     
 form.addEventListener( 'submit', function( ev ) {
   var text = field.value;
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
   if ( text !== '' ) {
-	todo.innerHTML += '<li>' + text + '</li>';
-	
+	todo.innerHTML += '<pre>' + text + '</pre>';
   }
   ev.preventDefault();
   
 }, false);
 
 todo.addEventListener( 'click', function( ev ){
-		var t = ev.target;
-		if (t.tagName === 'LI'){
-		ev.stopPropagation();
-		const userRef = firebaseRef.child("Liste");
-		userRef.remove()
-		t.parentNode.removeChild( t );
-		}
-		ev.preventDefault();
+		
+		//var t = ev.target;
+		//if (t.tagName === 'LI'){
+		//ev.stopPropagation();
+		//const userRef = firebaseRef.child("Liste");
+		//userRef.remove()
+		//t.parentNode.removeChild( t );
+		//}
+ev.preventDefault();
 }, true);
 
 </script>
-
 </body>
 </html>
