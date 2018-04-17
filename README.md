@@ -21,6 +21,22 @@ Um die Einkaufsliste bestmöglich zu realisieren wurde [Firebase](https://consol
 * Firebase Realtime Database
 * Firebase Hosting
 
+### Vor-und Nachteile von Firebase
+
+##### Vorteile
+
+* Realtime keine Sockets notwendig (automatisch) 
+* Keine REST API selber schreiben (Server muss trotzdem konfiguriert werden) 
+* niedrige [Kosten](https://firebase.google.com/pricing/?authuser=0)
+
+##### Nachteile 
+
+* Firebase kann nicht selber gehostet werden
+* Nicht geeignet für Big Data
+* Man kann Firebase nicht lokal laufen lassen – nur durch die Cloud.
+
+
+
 ### Firebase Realtime Database
 
 Firebase Realtime Database ist eine Cloud-hosted realtime [document store](https://db-engines.com/en/article/Document+Stores). Da bei einer Einkaufsliste keine umfangreichen Abfragen oder komplexe relationale Daten benötigt werden, eignet sich
@@ -210,6 +226,8 @@ Datum:17.04.2018
 Quellen:
 
 
-Allgemeine Informationen und Tutorials: [Firebase Documentation](https://firebase.google.com/docs/)
+Tutorials: [Firebase Documentation](https://firebase.google.com/docs/)
+
+Allgemeine Informationen:[Einführung in Firebase](http://mfg.fhstp.ac.at/development/webdevelopment/firebase-eine-kurze-einfuehrung/)
 
 Bei Problemen:[Stackoverflow](https://stackoverflow.com/) :-) 
