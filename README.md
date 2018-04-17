@@ -92,7 +92,7 @@ Um die Synchronisation der Einkaufsliste testen zu können, muss man die Einkauf
 Nun kann auf beiden Seiten Produkte eingegeben werden und in beiden Konsolen wird die Änderung angezeigt.
 
 <p align="center">
-  <img src="C:/Users/neca_/Desktop/test.JPG" alt="Testen der Synchronisation"
+  <img src="screenshots/test.JPG" alt="Testen der Synchronisation"
        width="650" height="335">
 </p>
 
