@@ -209,7 +209,7 @@ Meine Website: [Einkaufsliste](https://todolist-80418.firebaseapp.com/)
 ---
 
 
-Meine Datenbank: [Einkaufsliste Firestore DB](https://console.firebase.google.com/project/todolist-80418/database/todolist-80418/data)
+Meine Datenbank: [Einkaufsliste Firebase DB](https://console.firebase.google.com/project/todolist-80418/database/todolist-80418/data)
 
 
 ---
