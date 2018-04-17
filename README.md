@@ -46,6 +46,13 @@ auf den Client sozusagn repliziert.
 So sieht die standart Regeln von Firebase aus. EIn Upgrade auf den Tarif "Blaze" ermöglicht automatische Backups.
 
 
+<p align="center">
+  <img src="screenshots/start.JPG" alt="Start der Applikation"
+       width="650" height="335">
+</p>
+
+Die schon vorhandenen Datensätze werden in der Konsole bereits angezeigt (Datensätze repliziert) . 
+
 ### Einkaufsliste 
 Nun kann man mit der Implementierung der Einkaufsliste beginnen. Dabei muss man zuerst die Initialisierung von Firebase hinzufügen:
 
@@ -137,10 +144,11 @@ Um die Synchronisation der Einkaufsliste testen zu können, muss man die Einkauf
 Nun kann auf beiden Seiten Produkte eingegeben werden und in beiden Konsolen wird die Änderung angezeigt.
 
 <p align="center">
-  <img src="screenshots/test.JPG" alt="Testen der Synchronisation"
+  <img src="screenshots/autosync.JPG" alt="Testen der Synchronisation"
        width="650" height="335">
 </p>
 
+Im Screenshot erkennt man, dass in einem Browser Produkte hinzugefügt werden und in beiden Konsolen die Änderung angezeigt wird. Dies ist eine typische state synchronization welche durch `child_added` durchgeführt wird. 
 ###  Firebase Hosting
 
 Mit [Firebase Hosting](https://firebase.google.com/docs/hosting/) kann man mobile Web-Apps ganz einfach bereitstellen. Dieser Hoster wurde zusammen mit Firebase 
