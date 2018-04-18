@@ -244,7 +244,7 @@ Nun wird ein Link angezeigt - dieser ist die gehostete Website
 ---
 
 
-Meine Website: [Einkaufsliste](https://todolist-80418.firebaseapp.com/)
+Meine Website: [Einkaufsliste](https://todolist-80418.firebaseapp.com/index.html)
 
 
 ---
