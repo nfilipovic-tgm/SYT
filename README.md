@@ -47,13 +47,13 @@ ein  [Differential Synchronization Algorithm](https://github.com/janmonschke/dif
 
 ##### Vorteile
 
-* 
-* 
-* 
+* einfaches Einrichten des Systemes
+* keine Datenbank erforderlich (optional) 
 
 ##### Nachteile
 
-* Dokumentation
+* Server notwendig
+* keine Offlineverfügbarkeit
 
 ## Gewählte Schnittstelle
 
