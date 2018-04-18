@@ -68,7 +68,7 @@ Um die Einkaufsliste bestmöglich zu realisieren wurde [Firebase](https://consol
 
 * Realtime keine Sockets notwendig (automatisch) 
 * Keine REST API selber schreiben (Server muss trotzdem konfiguriert werden) 
-* niedrige [Kosten](https://firebase.google.com/pricing/?authuser=0)
+* niedrige [Kosten](https://firebase.google.com/pricing/?authuser=0)*
 
 ##### Nachteile 
 
