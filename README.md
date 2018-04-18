@@ -14,6 +14,47 @@ Das Ziel dieser Übung ist eine Anbindung einer mobilen Applikation an ein Webse
 * Offline-Verfügbarkeit
 * System global erreichbar
 
+## Mögliche Systeme 
+
+* Couchbase Mobile
+* DiffSync
+* Firebase
+
+### Couchbase Mobile 
+
+[Couchbase Mobile](https://dzone.com/articles/firebase-vs-couchbase-for-server-side-differences) ist eine Platform um mobile Apps zu erstellen. Datensätze werden als JSON Objekte in eine
+NoSQL Datenbank gespeichert. 
+
+
+#### Vor- und Nachteile von Couchbase Mobile
+
+##### Vorteile
+
+* Realtime Synchronisation
+* keine Einschränkung der Datenmenge
+* Kostenlos
+
+##### Nachteile
+
+* Dokumentation
+
+### DiffSync
+
+Mit [DiffSync](https://github.com/janmonschke/diffsync) werden JSON Objekte mittels Websockets synchronisiert. Dabei wird
+ein  [Differential Synchronization Algorithm](https://github.com/janmonschke/diffsync#algorithm) verwendet.
+
+#### Vor- und Nachteile von DiffSync
+
+##### Vorteile
+
+* 
+* 
+* 
+
+##### Nachteile
+
+* Dokumentation
+
 ## Gewählte Schnittstelle
 
 Um die Einkaufsliste bestmöglich zu realisieren wurde [Firebase](https://console.firebase.google.com/) genutzt. 
